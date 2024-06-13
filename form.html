@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      * {
+        margin: 0%;
+        padding: 0%;
+      }
+
+      body {
+        background-color: rgb(1, 1, 14);
+        font-family: "roboto", sans-serif;
+        color: white;
+        background-image: url('./heavy.jpeg');
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+
+      /* nav-bar */
+      .logo {
+        font-size: 25px;
+        margin-left: 33px;
+        color: rgb(42, 250, 42);
+      }
+
+      nav {
+        position: fixed;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        background-color: rgb(1, 1, 14);
+        padding: 22px;
+        box-shadow: 0px 2px 6px 2px rgb(26, 25, 25);
+        color: white;
+      }
+
+      nav ul li a {
+        margin-inline: 22px;
+        text-decoration: none;
+      }
+
+      nav li {
+        list-style: none;
+      }
+
+      nav ul {
+        margin-right: 63px;
+        margin-top: 6px;
+      }
+
+      ul li button {
+        width: 100px;
+        height: 33px;
+        background-color: rgb(4, 180, 4);
+        border: none;
+        color: white;
+        font-size: 18px;
+        border-radius: 8px;
+      }
+
+      ul li button:hover {
+        border: 2px solid white;
+        background-color: transparent;
+        color: rgb(20, 251, 20);
+        cursor: pointer;
+      }
+
+      ul li a:hover {
+        color: rgb(20, 251, 20);
+        border-bottom: 2px solid rgb(20, 251, 20);
+      }
+
+      .formbox {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .home img {
+        width: 400px;
+        height: 400px;
+        margin-top: 130px;
+        margin-left: 50px;
+        border-radius: 20px;
+      }
+
+      .formbox .formtext {
+        margin-top: 200px;
+        margin-left: 44px;
+      }
+
+      .formtext h2 {
+        font-size: 55px;
+        color: rgb(55, 248, 55);
+      }
+
+      .formtext h3 {
+        margin-top: 22px;
+        font-size: 22px;
+        color: rgb(55, 248, 55);
+      }
+
+      .form {
+        margin: 50px 370px;
+        padding: 50px 50px;
+        width: 300px;
+        display: inline-block;
+        border: 8px solid rgb(rgb(68, 61, 61));
+        border-radius: 40px;
+        background-color: rgba(140, 140, 151, 0.082);
+      }
+      .box {
+        color: white;
+        border: 2px solid gray;
+        border-radius: 10px;
+        /* text-align:center; */
+        width: 280px;
+        margin: 8px;
+        padding: 8px;
+        font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+        font-size: larger;
+        background-color: transparent;
+      }
+
+      .radio {
+        padding: 13px 0px 13px 0px;
+      }
+
+      .select {
+        background-color: black;
+      }
+      .qrcode {
+        height: 300px;
+        width: 300px;
+      }
+
+      .footer {
+        display: flex;
+        justify-content: center;
+        margin-top: 33px;
+        padding: 22px;
+        box-shadow: 0px 2px 4px 2px rgb(36, 36, 36);
+      }
+      .footer .footerText {
+        margin-inline: 93px;
+      }
+
+      .footerText h2 {
+        color: gold;
+      }
+
+      .footerText p {
+        margin-top: 11px;
+        color: silver;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <nav>
+        <div class="logo">
+          <h1>GetFit's</h1>
+        </div>
+        <ul>
+          <li>
+            <a href="">HOME</a>
+            <a href="">PROGRAM</a>
+            <a href="">PLAN</a>
+            <a href="">BLOG</a>
+            <a href="">CONTACT US</a>
+            <button>Join Now</button>
+          </li>
+        </ul>
+      </nav>
+      <section>
+        <div class="formbox">
+          <div class="formtext">
+            <h2>Registration form</h2>
+            <h3>You can apply here to get registered into the gym</h3>
+          </div>
+          <div class="form">
+            
+              <form action="handle_form.php" method="POST" enctype="multipart/form-data">
+                <div>
+                  <label for="name">Name:</label>
+                  <input
+                    type="text"
+                    id="name"
+                    class="box"
+                    name="name"
+                    maxlength="9"
+                    required
+                  />
+                </div>
+
+                <div>
+                  <label for="surname">Surname:</label>
+                  <input
+                    type="text"
+                    id="surname"
+                    class="box"
+                    name="surname"
+                    maxlength="9"
+                    required
+                  />
+                </div>
+
+                <div>
+                  <label for="email">Email:</label>
+                  <input
+                    type="email"
+                    id="email"
+                    class="box"
+                    name="email"
+                    pattern="[a-z0-9._%+-]+@gmail\.com"
+                    required
+                  />
+                </div>
+
+                <div>
+                  <label for="age">Age:</label>
+                  <input
+                    type="number"
+                    id="age"
+                    class="box"
+                    name="age"
+                    min="15"
+                    max="60"
+                  />
+                </div>
+
+                <div>
+                  <label for="address">Address:-</label>
+                  <input
+                    type="text"
+                    id="address"
+                    class="box"
+                    name="address"
+                    maxlength="150"
+                    required
+                  />
+                </div>
+
+                <div class="radio">
+                  <label for="gender">Gender:</label>
+
+                  <input
+                    type="radio"
+                    id="male"
+                    name="gender"
+                    value="male"
+                    class="radio"
+                  />
+                  <label for="male">Male</label>
+
+                  <input
+                    type="radio"
+                    id="female"
+                    name="gender"
+                    value="female"
+                    class="radio"
+                  />
+                  <label for="female">Female</label>
+
+                  <input
+                    type="radio"
+                    id="other"
+                    name="gender"
+                    value="other"
+                    class="radio"
+                  />
+                  <label for="other">Other</label>
+                </div>
+
+                <div>
+                  <label for="date">Date of Joining:</label>
+                  <input
+                    type="date"
+                    id="date"
+                    class="box"
+                    name="date"
+                    required
+                  />
+                </div>
+
+                <div>
+                  <label for="plan">Select plan:</label>
+                  <select id="plan" name="plan" class="box select" required>
+                    <option>30 days in 600Rs</option>
+                    <option>30 days in 1800Rs</option>
+                    <option>30 days in 3000Rs</option>
+                  </select>
+                </div>
+
+                <!-- <div class="custom-select" >
+                    <label for="image">Open QR code For Payment:</label>
+                    <select id="image" name="image" class="box">
+                      <option  ><img src="./QRcode.jpeg" class="qrcode" alt="QR code image"></option>
+                      <option data-image="./abbs.jpeg">Option 2</option>
+                      <option data-image="./cardio.jpeg">Option 3</option>
+                    </select>
+                  </div>
+                   -->
+
+                <div>
+                  <label for="image">Scan this for payment:</label>
+                  <br />
+                  <img src="./QRcode.jpeg" alt="QRCode" class="qrcode" />
+                </div>
+
+                <div>
+                  <label for="file">Upload Screenshot of payment here:</label>
+                  <input
+                    type="file"
+                    name="file"
+                    id="file"
+                    class="box"
+                    required
+                  />
+                </div>
+
+                <input type="submit" value="Submit" id="submit" class="box" />
+              </form>
+          </div>
+        </div>
+      </section>
+      <!-- Footer -->
+      <div class="footer">
+        <div class="footerText">
+          <h2>About Us</h2>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga et
+            impedit qui eum accusamus temporibus.
+          </p>
+        </div>
+
+        <div class="footerText">
+          <h2>Plans</h2>
+          <p>Transparent</p>
+          <p>Account</p>
+          <p>Valid</p>
+          <p>Ends</p>
+        </div>
+
+        <div class="footerText">
+          <h2>Program</h2>
+          <p>Dance</p>
+          <p>Cardio</p>
+          <p>Heavy Weight</p>
+          <p>Fun More</p>
+        </div>
+
+        <div class="footerText">
+          <h2>Contact Us</h2>
+          <p>Membership</p>
+          <p>Plans</p>
+          <p>Diamond Plan</p>
+          <p>Join now</p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
